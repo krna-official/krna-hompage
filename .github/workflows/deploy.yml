@@ -21,6 +21,9 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx @11ty/eleventy
+        env:
+          # 도메인(www.k-rna.co.kr) 연결 후에는 이 값을 "/" 로 바꿉니다
+          PATH_PREFIX: ${{ vars.PATH_PREFIX || '/krna-hompage/' }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
