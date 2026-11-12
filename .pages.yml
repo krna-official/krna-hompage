@@ -1,0 +1,98 @@
+# Pages CMS (https://app.pagescms.org) 관리자 화면 설정
+media:
+  input: src/images
+  output: /images
+content:
+  - name: cases
+    label: 구축 사례
+    type: collection
+    path: src/cases
+    view:
+      fields: [title, industry, completed]
+    fields:
+      - { name: title, label: 프로젝트명, type: string, required: true }
+      - { name: client, label: 고객사, type: string }
+      - name: industry
+        label: 산업 분류
+        type: select
+        options: { values: [제약/바이오, 식품, 자동차, 전자, 화장품, 스마트 공장, 기타] }
+      - name: type
+        label: 구분
+        type: select
+        options: { values: [automation, smart-factory] }
+        default: automation
+      - { name: completed, label: "적용 완료일 (예: 2026년 11월)", type: string }
+      - { name: sort, label: "정렬용 날짜 (예: 2026-11)", type: string }
+      - { name: youtube, label: 유튜브 링크, type: string }
+      - { name: image, label: 대표 사진, type: image }
+      - { name: gallery, label: 추가 사진, type: image, list: true }
+      - { name: features, label: 시스템 특징, type: string, list: true }
+      - { name: equipment, label: 주요 장비, type: string, list: true }
+      - { name: cycleTime, label: Cycle Time, type: string }
+      - { name: note, label: 비고, type: string }
+      - { name: body, label: 추가 설명, type: rich-text }
+  - name: products
+    label: 제품
+    type: collection
+    path: src/products
+    view:
+      fields: [title, brand, category]
+    fields:
+      - { name: title, label: 제품명, type: string, required: true }
+      - { name: model, label: 모델, type: string }
+      - name: brand
+        label: 브랜드
+        type: select
+        options: { values: [OMRON, 뉴로메카], creatable: true }
+      - name: category
+        label: 분류
+        type: select
+        options:
+          values:
+            - { value: delta, label: 델타로봇 }
+            - { value: scara, label: 스카라로봇 }
+            - { value: articulated, label: 다관절로봇 }
+            - { value: cobot, label: 협동로봇 }
+            - { value: vision, label: 비젼시스템 }
+      - { name: order, label: 정렬 순서, type: number }
+      - { name: image, label: 제품 사진, type: image }
+      - { name: specImages, label: 사양 이미지, type: image, list: true }
+      - { name: catalogs, label: 자료 이름, type: string, list: true }
+      - { name: body, label: 설명, type: rich-text }
+  - name: notices
+    label: 공지사항
+    type: collection
+    path: src/notices
+    filename: "{year}-{month}-{day}-{primary}.md"
+    fields:
+      - { name: title, label: 제목, type: string, required: true }
+      - { name: date, label: 날짜, type: date, required: true }
+      - { name: body, label: 내용, type: rich-text }
+  - name: site
+    label: 회사 정보
+    type: file
+    path: src/_data/site.json
+    format: json
+    fields:
+      - { name: name, label: 회사명, type: string }
+      - { name: nameEn, label: 영문명, type: string }
+      - { name: slogan, label: 슬로건, type: string }
+      - { name: description, label: 검색엔진 설명, type: text }
+      - { name: url, label: 사이트 주소, type: string }
+      - { name: ceo, label: 대표이사, type: string }
+      - { name: bizNo, label: 사업자등록번호, type: string }
+      - { name: tel, label: 대표전화, type: string }
+      - { name: fax, label: 팩스, type: string }
+      - { name: mobile, label: 휴대폰, type: string }
+      - { name: email, label: 이메일, type: string }
+      - { name: zip, label: 우편번호, type: string }
+      - { name: address, label: 주소, type: string }
+      - { name: mapQuery, label: 지도 검색 주소, type: string }
+      - name: directions
+        label: 교통 안내
+        type: object
+        list: true
+        fields:
+          - { name: label, label: 구분, type: string }
+          - { name: text, label: 안내, type: text }
+      - { name: formEndpoint, label: 문의 양식 전송 주소, type: string }
