@@ -1,0 +1,23 @@
+---
+layout: base.njk
+---
+<section class="sec">
+  <div class="wrap detail">
+    <a class="back" href="/products/#{{ category }}">← 제품 목록</a>
+    <div class="detail-grid prod-detail">
+      <div class="detail-media"><div class="prod-hero"><img src="{{ image }}" alt="{{ brand }} {{ title }}"></div></div>
+      <div class="detail-info">
+        {% for c in categories.products %}{% if c.key == category %}<span class="tag">{{ c.name }}</span>{% endif %}{% endfor %}
+        <h2>{{ brand }} {{ title }}</h2>
+        <p class="model">{{ model }}</p>
+        {{ content | safe }}
+        {% if catalogs.length %}<h3>자료</h3><ul class="dots">{% for f in catalogs %}<li>{{ f }} <small>(요청 시 메일로 보내드립니다)</small></li>{% endfor %}</ul>{% endif %}
+        <div class="btn-row">
+          <a class="btn btn-primary" href="/support/contact/?subject={{ (brand + ' ' + title) | urlencode }}">견적 문의</a>
+          <a class="btn btn-line" href="tel:{{ site.mobile }}">전화 상담</a>
+        </div>
+      </div>
+    </div>
+    {% if specImages.length %}<div class="spec-imgs">{% for s in specImages %}<img src="{{ s }}" alt="{{ title }} 사양" loading="lazy">{% endfor %}</div>{% endif %}
+  </div>
+</section>

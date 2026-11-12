@@ -1,0 +1,14 @@
+---
+title: 오시는길
+permalink: /company/location/
+---
+<section class="sec">
+  <div class="wrap">
+    <div class="map"><iframe title="케이알앤에이 위치 지도" src="https://maps.google.com/maps?q={{ site.mapQuery | urlencode }}&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    <div class="loc-grid">
+      <div><h3>주소</h3><p>({{ site.zip }}) {{ site.address }}</p></div>
+      <div><h3>연락처</h3><p>대표 {{ site.tel }}<br>팩스 {{ site.fax }}<br><a href="mailto:{{ site.email }}">{{ site.email }}</a></p></div>
+      <div><h3>교통</h3>{% for d in site.directions %}<p><b>{{ d.label }}</b> {{ d.text }}</p>{% endfor %}</div>
+    </div>
+  </div>
+</section>

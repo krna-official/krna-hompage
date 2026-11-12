@@ -1,0 +1,1 @@
+{ "layout": "case.njk", "section": "사업영역", "sectionEn": "References", "permalink": "/cases/{{ page.fileSlug }}/" }

@@ -1,0 +1,129 @@
+---
+layout: base.njk
+title: 로봇 자동화·스마트공장 구축 전문기업
+bodyClass: home
+---
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="hero-txt">
+      <p class="eyebrow light">Korea Robotics &amp; Automation</p>
+      <h1>로봇 자동화로<br>제조 현장의 <em>내일</em>을 만듭니다</h1>
+      <p class="hero-lead">포장·이송·조립·검사 공정까지. 케이알앤에이는 컨설팅부터 설계, 제작, 설치, A/S까지 한 번에 책임지는 로봇 자동화 시스템 전문기업입니다.</p>
+      <div class="hero-btns">
+        <a class="btn btn-primary" href="/cases/">구축 사례 보기</a>
+        <a class="btn btn-ghost" href="/support/contact/">자동화 상담 문의</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      {% set hc = collections.cases | limit(3) %}
+      {% for c in hc %}
+      <a class="hm hm{{ loop.index }}" href="{{ c.url }}"><img src="{{ c.data.image }}" alt="{{ c.data.title }}" loading="{% if loop.first %}eager{% else %}lazy{% endif %}"><span>{{ c.data.title }}</span></a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="wrap stats-in">
+    <div><strong>{{ collections.cases.length }}<small>건+</small></strong><span>자동화 라인 구축 사례</span></div>
+    <div><strong>5<small>개 산업</small></strong><span>제약·식품·자동차·전자·화장품</span></div>
+    <div><strong>OMRON<small> · </small>뉴로메카</strong><span>글로벌 로봇 파트너</span></div>
+    <div><strong>벤처<small>·</small>연구소</strong><span>벤처기업 인증 · 기업부설연구소</span></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-hd">
+      <p class="eyebrow">Business</p>
+      <h2>사업영역</h2>
+      <p>공정 분석부터 가동 이후 유지보수까지, 현장에 맞는 자동화를 설계합니다.</p>
+    </div>
+    <div class="biz-grid">
+      <a class="biz" href="/business/">
+        <span class="biz-no">01</span>
+        <h3>자동화 시스템</h3>
+        <p>델타·협동·다관절 로봇과 비젼 시스템을 활용한 포장, 인케이싱, 팔레타이징, 조립 자동화 라인을 구축합니다.</p>
+        <span class="more">자세히 보기</span>
+      </a>
+      <a class="biz" href="/business/smart-factory/">
+        <span class="biz-no">02</span>
+        <h3>스마트 공장</h3>
+        <p>MES 연동, 생산 모니터링, 공정 데이터 수집으로 생산 현황을 한눈에 보고 관리할 수 있게 만듭니다.</p>
+        <span class="more">자세히 보기</span>
+      </a>
+      <a class="biz" href="/products/">
+        <span class="biz-no">03</span>
+        <h3>로봇·비젼 공급</h3>
+        <p>OMRON, 뉴로메카 공식 파트너로서 로봇과 머신비젼을 공급하고 현장 적용과 기술지원을 함께 제공합니다.</p>
+        <span class="more">제품 보기</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-gray">
+  <div class="wrap">
+    <div class="sec-hd row">
+      <div>
+        <p class="eyebrow">References</p>
+        <h2>최근 구축 사례</h2>
+      </div>
+      <a class="link-more" href="/cases/">전체 사례 보기</a>
+    </div>
+    <div class="case-grid">
+      {% for c in collections.cases | limit(6) %}{% include "case-card.njk" %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-hd row">
+      <div>
+        <p class="eyebrow">Products</p>
+        <h2>제품소개</h2>
+      </div>
+      <a class="link-more" href="/products/">전체 제품 보기</a>
+    </div>
+    <div class="cat-grid">
+      {% for cat in categories.products %}
+        {% set first = collections.products | where("category", cat.key) | first %}
+        <a class="cat" href="/products/#{{ cat.key }}">
+          <div class="cat-img"><img src="{{ first.data.image }}" alt="{{ cat.name }}" loading="lazy"></div>
+          <h3>{{ cat.name }}</h3>
+          <p>{{ cat.desc }}</p>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-navy">
+  <div class="wrap">
+    <div class="sec-hd">
+      <p class="eyebrow light">Process</p>
+      <h2>프로젝트 진행 과정</h2>
+    </div>
+    <ol class="process">
+      <li><b>01</b><h3>상담·컨설팅</h3><p>현장 방문, 공정 분석, 목표 생산량 확인</p></li>
+      <li><b>02</b><h3>설계</h3><p>기구·제어 설계와 사이클타임 검토</p></li>
+      <li><b>03</b><h3>제작</h3><p>장비 제작과 사내 시운전</p></li>
+      <li><b>04</b><h3>설치·시운전</h3><p>현장 설치, 안정화, 작업자 교육</p></li>
+      <li><b>05</b><h3>A/S</h3><p>유지보수와 공정 개선 지원</p></li>
+    </ol>
+  </div>
+</section>
+
+{% if collections.notices.length %}
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-hd row"><div><p class="eyebrow">Notice</p><h2>공지사항</h2></div><a class="link-more" href="/support/">더보기</a></div>
+    <ul class="notice-list">
+      {% for n in collections.notices | limit(3) %}<li><a href="{{ n.url }}"><span>{{ n.data.title }}</span><time>{{ n.date | ymd }}</time></a></li>{% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
+
+{% include "cta.njk" %}

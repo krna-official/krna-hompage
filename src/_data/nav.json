@@ -1,0 +1,25 @@
+[
+  { "title": "회사소개", "url": "/company/", "children": [
+    { "title": "인사말", "url": "/company/" },
+    { "title": "연혁", "url": "/company/history/" },
+    { "title": "비전·사업소개", "url": "/company/vision/" },
+    { "title": "조직도", "url": "/company/organization/" },
+    { "title": "오시는길", "url": "/company/location/" }
+  ]},
+  { "title": "사업영역", "url": "/business/", "children": [
+    { "title": "자동화 시스템", "url": "/business/" },
+    { "title": "스마트 공장", "url": "/business/smart-factory/" },
+    { "title": "구축 사례", "url": "/cases/" }
+  ]},
+  { "title": "제품소개", "url": "/products/", "children": [
+    { "title": "델타로봇", "url": "/products/#delta" },
+    { "title": "스카라로봇", "url": "/products/#scara" },
+    { "title": "다관절로봇", "url": "/products/#articulated" },
+    { "title": "협동로봇", "url": "/products/#cobot" },
+    { "title": "비젼시스템", "url": "/products/#vision" }
+  ]},
+  { "title": "고객센터", "url": "/support/", "children": [
+    { "title": "공지사항", "url": "/support/" },
+    { "title": "문의하기", "url": "/support/contact/" }
+  ]}
+]

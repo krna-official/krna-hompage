@@ -1,0 +1,26 @@
+---
+layout: base.njk
+title: 제품소개
+lead: OMRON · 뉴로메카 공식 파트너로서 로봇과 비젼 시스템을 공급하고 적용을 지원합니다.
+permalink: /products/
+---
+<section class="sec">
+  <div class="wrap">
+    {% for cat in categories.products %}
+    <div class="prod-sec" id="{{ cat.key }}">
+      <div class="sec-hd"><h2>{{ cat.name }}</h2><p>{{ cat.desc }}</p></div>
+      <div class="prod-grid">
+        {% for p in collections.products | where("category", cat.key) %}
+        <a class="prod" href="{{ p.url }}">
+          <div class="prod-img"><img src="{{ p.data.image }}" alt="{{ p.data.brand }} {{ p.data.title }}" loading="lazy"></div>
+          <span class="brand">{{ p.data.brand }}</span>
+          <h3>{{ p.data.title }}</h3>
+          <p>{{ p.data.model }}</p>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% include "cta.njk" %}

@@ -1,0 +1,32 @@
+---
+layout: base.njk
+---
+<section class="sec">
+  <div class="wrap detail">
+    <a class="back" href="/cases/">← 구축 사례 목록</a>
+    <div class="detail-grid">
+      <div class="detail-media">
+        {% set yid = youtube | ytid %}
+        {% if yid %}
+        <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/{{ yid }}" title="{{ title }} 영상" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        {% endif %}
+        <img src="{{ image }}" alt="{{ title }}">
+        {% for g in gallery %}<img src="{{ g }}" alt="{{ title }} 상세" loading="lazy">{% endfor %}
+      </div>
+      <div class="detail-info">
+        <span class="tag">{{ industry }}</span>
+        <h2>{{ title }}</h2>
+        <dl class="spec">
+          {% if client %}<dt>고객사</dt><dd>{{ client }}</dd>{% endif %}
+          {% if completed %}<dt>적용 완료</dt><dd>{{ completed }}</dd>{% endif %}
+          {% if cycleTime %}<dt>Cycle Time</dt><dd>{{ cycleTime }}</dd>{% endif %}
+        </dl>
+        {% if features.length %}<h3>시스템 특징</h3><ul class="dots">{% for f in features %}<li>{{ f }}</li>{% endfor %}</ul>{% endif %}
+        {% if equipment.length %}<h3>주요 장비</h3><ul class="dots">{% for f in equipment %}<li>{{ f }}</li>{% endfor %}</ul>{% endif %}
+        {% if note %}<p class="note">※ {{ note }}</p>{% endif %}
+        {{ content | safe }}
+        <a class="btn btn-primary" href="/support/contact/">비슷한 자동화 문의하기</a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,24 @@
+---
+title: 자동화 시스템
+lead: 로봇과 비젼으로 포장·이송·조립 공정을 자동화합니다.
+---
+<section class="sec">
+  <div class="wrap">
+    <div class="feature-grid">
+      <div class="feature"><h3>포장·인케이싱 자동화</h3><p>델타로봇과 비젼 트래킹으로 파우치, 용기, 카톤 제품을 고속으로 집어 박스에 담습니다. 제함, 봉함, 마킹, 중량선별까지 전 공정을 연결합니다.</p></div>
+      <div class="feature"><h3>팔레타이징·이적재</h3><p>다관절·직교 로봇으로 박스 적재와 트레이 이적재를 자동화하여 작업자의 근골격계 부담을 줄입니다.</p></div>
+      <div class="feature"><h3>조립·체결 자동화</h3><p>스카라·협동 로봇으로 스크류 체결, 배관 조립, 초음파 융착 등 반복 정밀 작업을 자동화합니다.</p></div>
+      <div class="feature"><h3>비젼 검사</h3><p>OMRON FH 비젼으로 제품 위치 인식, 수량 검사, 불량 검출을 수행해 품질을 안정화합니다.</p></div>
+    </div>
+    <div class="sec-hd row mt">
+      <div><p class="eyebrow">Industries</p><h2>산업별 구축 사례</h2></div>
+      <a class="link-more" href="/cases/">전체 사례 보기</a>
+    </div>
+    <div class="ind-grid">
+      {% for ind in categories.industries %}{% set n = collections.cases | where("industry", ind) %}{% if n.length %}
+      <a class="ind" href="/cases/#{{ ind }}"><h3>{{ ind }}</h3><span>{{ n.length }}건</span></a>
+      {% endif %}{% endfor %}
+    </div>
+  </div>
+</section>
+{% include "cta.njk" %}

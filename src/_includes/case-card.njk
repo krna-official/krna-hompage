@@ -1,0 +1,8 @@
+<a class="case" href="{{ c.url }}" data-industry="{{ c.data.industry }}" data-type="{{ c.data.type }}">
+  <div class="case-img"><img src="{{ c.data.image }}" alt="{{ c.data.title }}" loading="lazy">{% if c.data.youtube %}<span class="play" aria-label="영상 있음"></span>{% endif %}</div>
+  <div class="case-body">
+    <span class="tag">{{ c.data.industry }}</span>
+    <h3>{{ c.data.title }}</h3>
+    <p>{{ c.data.client }}{% if c.data.completed %} · {{ c.data.completed }}{% endif %}</p>
+  </div>
+</a>

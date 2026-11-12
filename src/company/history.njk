@@ -1,0 +1,15 @@
+---
+title: 연혁
+lead: 2023년 설립 이후 케이알앤에이가 걸어온 길입니다.
+permalink: /company/history/
+---
+<section class="sec">
+  <div class="wrap timeline">
+    {% for y in history %}
+    <div class="tl-year">
+      <h2>{{ y.year }}</h2>
+      <ul>{% for it in y.items %}<li><b>{{ it[0] }}</b><span>{{ it[1] }}</span></li>{% endfor %}</ul>
+    </div>
+    {% endfor %}
+  </div>
+</section>

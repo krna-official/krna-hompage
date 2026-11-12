@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if title and page.url != "/" %}{{ title }} | {% endif %}{{ site.name }} KRNA</title>
+<meta name="description" content="{{ description or site.description }}">
+<meta property="og:title" content="{{ title or site.name }}">
+<meta property="og:description" content="{{ description or site.description }}">
+<meta property="og:image" content="{{ site.url }}{{ image or '/images/og.jpg' }}">
+<meta property="og:type" content="website">
+<link rel="icon" href="/images/favicon.png">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body class="{{ bodyClass }}">
+<a class="skip" href="#main">본문 바로가기</a>
+<header class="hd" id="hd">
+  <div class="wrap hd-in">
+    <a class="logo" href="/"><img src="/images/logo.png" alt="KRNA 케이알앤에이" width="134" height="46"></a>
+    <nav class="gnb" aria-label="주 메뉴">
+      <ul>
+      {% for m in nav %}
+        <li class="{% if page.url.startsWith(m.url) %}on{% endif %}"><a href="{{ m.url }}">{{ m.title }}</a>
+          <ul class="sub">{% for c in m.children %}<li><a href="{{ c.url }}">{{ c.title }}</a></li>{% endfor %}</ul>
+        </li>
+      {% endfor %}
+      </ul>
+    </nav>
+    <a class="btn btn-sm hd-cta" href="/support/contact/">견적·상담 문의</a>
+    <button class="menu-btn" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+{% if section %}
+<section class="sub-hero">
+  <div class="wrap">
+    <p class="eyebrow">{{ sectionEn }}</p>
+    <h1>{{ title }}</h1>
+    {% if lead %}<p class="lead">{{ lead }}</p>{% endif %}
+  </div>
+</section>
+{% for m in nav %}{% if m.title == section %}
+<nav class="lnb" aria-label="{{ section }} 하위 메뉴"><div class="wrap"><ul>
+  {% for c in m.children %}<li><a href="{{ c.url }}" class="{% if c.url == page.url %}on{% endif %}">{{ c.title }}</a></li>{% endfor %}
+</ul></div></nav>
+{% endif %}{% endfor %}
+{% endif %}
+{{ content | safe }}
+</main>
+
+<footer class="ft">
+  <div class="wrap ft-top">
+    <div>
+      <img class="ft-logo" src="/images/logo.png" alt="KRNA" width="117" height="40">
+      <p class="ft-slogan">{{ site.slogan }}</p>
+    </div>
+    <div class="ft-contact">
+      <p><strong>T.</strong> <a href="tel:{{ site.tel }}">{{ site.tel }}</a></p>
+      <p><strong>F.</strong> {{ site.fax }}</p>
+      <p><strong>E.</strong> <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+    </div>
+  </div>
+  <div class="wrap ft-info">
+    <p>{{ site.name }} <span>대표이사 {{ site.ceo }}</span> <span>사업자등록번호 {{ site.bizNo }}</span></p>
+    <p>{{ site.address }}</p>
+    <p class="copy">© {{ "" | year }} KRNA Co., Ltd. All rights reserved. · <a href="/privacy/">개인정보처리방침</a></p>
+  </div>
+</footer>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

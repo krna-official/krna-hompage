@@ -1,0 +1,1 @@
+{ "layout": "notice.njk", "section": "고객센터", "sectionEn": "Notice", "permalink": "/support/notice/{{ page.fileSlug }}/" }

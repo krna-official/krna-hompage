@@ -1,0 +1,19 @@
+---
+layout: base.njk
+title: 구축 사례
+lead: 산업 현장에 적용한 KRNA의 자동화 시스템입니다.
+permalink: /cases/
+---
+<section class="sec">
+  <div class="wrap">
+    <div class="filters" role="tablist" aria-label="산업 분류">
+      <button class="on" data-filter="all">전체 <span>{{ collections.cases.length }}</span></button>
+      {% for ind in categories.industries %}{% set n = collections.cases | where("industry", ind) %}{% if n.length %}
+      <button data-filter="{{ ind }}">{{ ind }} <span>{{ n.length }}</span></button>{% endif %}{% endfor %}
+      {% set sf = collections.cases | where("type", "smart-factory") %}<button data-filter="smart-factory">스마트 공장 <span>{{ sf.length }}</span></button>
+    </div>
+    <div class="case-grid" id="caseGrid">
+      {% for c in collections.cases %}{% include "case-card.njk" %}{% endfor %}
+    </div>
+  </div>
+</section>

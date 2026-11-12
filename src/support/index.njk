@@ -1,0 +1,13 @@
+---
+title: 공지사항
+permalink: /support/
+---
+<section class="sec">
+  <div class="wrap">
+    {% if collections.notices.length %}
+    <ul class="notice-list">
+      {% for n in collections.notices %}<li><a href="{{ n.url }}"><span>{{ n.data.title }}</span><time>{{ n.date | ymd }}</time></a></li>{% endfor %}
+    </ul>
+    {% else %}<p class="empty">등록된 공지가 없습니다.</p>{% endif %}
+  </div>
+</section>
