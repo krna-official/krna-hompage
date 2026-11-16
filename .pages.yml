@@ -15,7 +15,7 @@ content:
       - name: industry
         label: 산업 분류
         type: select
-        options: { values: [제약/바이오, 식품, 자동차, 전자, 화장품, 스마트 공장, 기타] }
+        options: { values: [제약/바이오, 식품, 자동차, 전자, 화장품, 기타] }
       - name: type
         label: 구분
         type: select
