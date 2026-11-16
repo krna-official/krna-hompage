@@ -509,3 +509,6 @@ h1,h2,h3{line-height:1.3;margin:0;letter-spacing:-.02em}
 .spec-h{font-size:18px;margin:0 0 10px}.spec-h small{font-size:14px;font-weight:500;color:var(--ink-3);margin-left:6px}
 .spec-note{font-size:14px;color:var(--ink-3);margin:12px 0 0}
 @media (max-width:900px){.dl{grid-template-columns:1fr;gap:24px}.dl-img{position:static}.spec-c{font-size:13.5px}.spec-c th,.spec-c td{padding:8px 2px}}
+.dl-points{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.dl-points li{font-size:14.5px;font-weight:700;color:#fff;background:var(--blue);border-radius:999px;padding:7px 14px}
+.dl-points li:nth-child(3){background:var(--red)}
