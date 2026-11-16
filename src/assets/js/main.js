@@ -38,7 +38,8 @@ if (form) {
     if (form.getAttribute('action')) {
       msg.textContent = '보내는 중입니다...';
       try {
-        const r = await fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+        const gs = form.action.includes('script.google.com');
+        const r = await fetch(form.action, gs ? { method: 'POST', body: new URLSearchParams(data) } : { method: 'POST', body: data, headers: { Accept: 'application/json' } });
         if (!r.ok) throw new Error();
         form.reset(); msg.textContent = '문의가 접수되었습니다. 빠르게 연락드리겠습니다.';
       } catch { msg.textContent = '전송에 실패했습니다. 전화나 이메일로 연락 부탁드립니다.'; }
