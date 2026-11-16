@@ -1,0 +1,110 @@
+{# 아이콘: 선 아이콘 SVG #}
+{% set ic = {
+  team: '<path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 11a2.5 2.5 0 1 0 0-5M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.2c3 .3 6 2.4 6 5.8"/>',
+  design: '<path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/>',
+  code: '<path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13 5l-2 14"/>',
+  tool: '<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/>',
+  monitor: '<path d="M3 4h18v12H3zM8 20h8M12 16v4M7 12l3-3 2 2 4-4"/>',
+  frame: '<path d="M4 4h16v16H4zM4 12h16M12 4v16"/>',
+  bottle: '<path d="M10 2h4v4l2 3v12a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V9l2-3zM8 13h8"/>',
+  flask: '<path d="M9 2h6M10 2v7L4.5 19A2 2 0 0 0 6.3 22h11.4a2 2 0 0 0 1.8-3L14 9V2M7 15h10"/>',
+  chip: '<path d="M7 7h10v10H7zM10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/>',
+  robot: '<path d="M4 21h8M8 21v-4l5-6M13 11l4-3 3 3-3 4M13 11a2 2 0 1 0 0-.01M17 8V5"/>',
+  eye: '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>',
+  pulse: '<path d="M3 12h4l2-5 4 10 2-5h6"/>',
+  bolt: '<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>',
+  gear: '<path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/>',
+  check: '<path d="M5 12l5 5 9-10"/>'
+} %}
+{% macro icon(d, cls="") %}<svg class="ico {{ cls }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{{ d | safe }}</svg>{% endmacro %}
+
+<section class="sec sec-gray">
+  <div class="wrap">
+    <div class="sec-hd">
+      <p class="eyebrow">Scope</p>
+      <h2>설계부터 A/S까지 한 번에</h2>
+      <p>KRNA가 라인 전체를 책임지고, 필요한 분야는 검증된 협력사와 함께 구축합니다.</p>
+    </div>
+
+    <div class="sd">
+      <div class="sd-top">
+        <div class="sd-partner">
+          <div class="sd-pic">{{ icon(ic.monitor) }}</div>
+          <span class="sd-tag">협력</span>
+          <h3>ERP &amp; MES S/W</h3>
+          <ul><li>스마트공장 솔루션</li><li>MES SW 솔루션</li><li>고객사 기술 교육</li></ul>
+        </div>
+        <div class="sd-link"><span>협력</span></div>
+        <div class="sd-core">
+          <div class="sd-core-hd"><img src="/images/logo.png" alt="KRNA" width="110" height="38"><p>자동화 라인 구축</p></div>
+          <ol class="sd-steps">
+            <li>{{ icon(ic.team) }}<b>컨소시엄 구성</b><small>공급사·사업 관리</small></li>
+            <li>{{ icon(ic.design) }}<b>설계·제작</b><small>라인 설계·제작</small></li>
+            <li>{{ icon(ic.code) }}<b>Robot &amp; PLC</b><small>제어 프로그램</small></li>
+            <li>{{ icon(ic.tool) }}<b>설치 및 A/S</b><small>시운전·유지보수</small></li>
+          </ol>
+        </div>
+        <div class="sd-link"><span>협력</span></div>
+        <div class="sd-partner">
+          <div class="sd-pic">{{ icon(ic.frame) }}</div>
+          <span class="sd-tag">협력</span>
+          <h3>기구가공 및 전장</h3>
+          <ul><li>부품 가공</li><li>프레임 제작</li><li>전장반 제작</li></ul>
+        </div>
+      </div>
+
+      <div class="sd-stem" aria-hidden="true"></div>
+
+      <div class="sd-bottom">
+        <div class="sd-ctrl">
+          <h4>PLC 제어</h4>
+          <div class="sd-brands"><span>LS</span><span>OMRON</span><span>MITSUBISHI</span></div>
+        </div>
+        <div class="sd-apps">
+          <h4>적용 분야</h4>
+          <div class="sd-app">{{ icon(ic.bottle) }}<span>식음료 포장라인 자동화</span></div>
+          <div class="sd-app">{{ icon(ic.flask) }}<span>의료·화장품 생산라인 자동화</span></div>
+          <div class="sd-app">{{ icon(ic.chip) }}<span>기계·전자 조립라인 자동화</span></div>
+          <div class="sd-app">{{ icon(ic.robot) }}<span>기타 로봇 자동화 시스템</span></div>
+        </div>
+        <div class="sd-ctrl">
+          <h4>Robot 제어</h4>
+          <div class="sd-brands"><span>뉴로메카</span><span>OMRON</span><span>KUKA</span><span>레인보우로보틱스</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-hd">
+      <p class="eyebrow">Technology</p>
+      <h2>보유 기술</h2>
+      <p>로봇, 비전, 제어, 기구, 그리고 AI 설비관리까지 자동화 라인에 필요한 기술을 직접 보유하고 있습니다.</p>
+    </div>
+    {% set techs = [
+      { k: "robot", i: ic.robot, t: "로봇 & PLC 제어", items: ["델타로봇 고속 제어", "스카라·다관절·협동로봇 Teach & 경로 최적화", "PLC 연동 시퀀스 프로그램", "센서 인식 컨베이어 트래킹"] },
+      { k: "vision", i: ic.eye, t: "비전 시스템", items: ["OMRON FH 비전 검사", "위치·각도 인식 및 보정", "불량 자동 선별 시스템", "컨베이어 트래킹"] },
+      { k: "ai", i: ic.pulse, t: "AI 설비관리", items: ["생산정보 실시간 모니터링", "가동률 관리", "장비 상태 및 이상 탐지", "점검 및 수명관리"], link: "/business/ai-maintenance/" },
+      { k: "elec", i: ic.bolt, t: "전장 설계·제작", items: ["PLC 제어반 설계·제작", "전장 배선 및 시운전", "원격 모니터링 HMI", "안전 회로 설계 적용"] },
+      { k: "mech", i: ic.gear, t: "기구 설계·제작", items: ["3D & CAD 기구 설계", "자동화 라인 제작·조립", "설치·시운전·A/S 일괄", "특수 지그 및 툴링 제작"] }
+    ] %}
+    <div class="tk-grid">
+      {% for x in techs %}
+      <div class="tk{% if x.link %} tk-hl{% endif %}">
+        <div class="tk-img">
+          <img src="/images/tech/{{ x.k }}.jpg" alt="" loading="lazy">
+          <div class="tk-badge">{{ icon(x.i) }}</div>
+          <span class="tk-no">0{{ loop.index }}</span>
+        </div>
+        <div class="tk-body">
+          <h3>{{ x.t }}</h3>
+          <ul>{% for it in x.items %}<li>{{ icon(ic.check, "chk") }}<span>{{ it }}</span></li>{% endfor %}</ul>
+          {% if x.link %}<a class="tk-more" href="{{ x.link }}">자세히 보기 →</a>{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
