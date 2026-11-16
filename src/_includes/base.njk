@@ -28,7 +28,7 @@
       {% endfor %}
       </ul>
     </nav>
-    <a class="btn btn-sm hd-cta" href="/support/contact/">견적·상담 문의</a>
+    <a class="btn btn-sm hd-cta{% if page.url == "/support/contact/" %} on{% endif %}" href="/support/contact/">견적·상담 문의</a>
     <button class="menu-btn" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
