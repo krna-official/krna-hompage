@@ -43,7 +43,7 @@ content:
       - name: brand
         label: 브랜드
         type: select
-        options: { values: [OMRON, 뉴로메카], creatable: true }
+        options: { values: [OMRON, 뉴로메카, 레인보우로보틱스], creatable: true }
       - name: category
         label: 분류
         type: select
