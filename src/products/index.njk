@@ -8,15 +8,40 @@ permalink: /products/
   <div class="wrap">
     <div class="prod-sec" id="delta">
       <div class="sec-hd"><p class="eyebrow">Delta Robot</p><h2>델타로봇</h2><p>고속 피킹·인케이싱에 최적화된 병렬 로봇입니다. KRNA 포장 자동화 라인의 핵심 로봇입니다.</p></div>
-      <div class="prod-grid">
-        {% for p in collections.products | where("category", "delta") %}
-        <a class="prod" href="{{ p.url }}">
-          <div class="prod-img"><img src="{{ p.data.image }}" alt="{{ p.data.brand }} {{ p.data.title }}" loading="lazy"></div>
-          <span class="brand">{{ p.data.brand }}</span>
-          <h3>{{ p.data.title }} 시리즈</h3>
-          <p>{{ p.data.model }}</p>
-        </a>
-        {% endfor %}
+      {% set d = collections.products | where("category", "delta") | first %}
+      <div class="dl">
+        <div class="dl-img"><img src="{{ d.data.image }}" alt="뉴로메카 델타로봇 D 시리즈"></div>
+        <div class="dl-info">
+          <span class="brand">뉴로메카</span>
+          <h3>D 시리즈 <small>D3 · D6</small></h3>
+          <p>진동억제 설계를 바탕으로 한 고속·고정밀 4축 델타로봇입니다. 하중과 작업 반경에 따라 D3(하중 3kg)와 D6(하중 6kg) 두 가지 표준 모델이 있으며, 컨베이어·그리퍼·비전 센서를 PLC와 통합한 포장 자동화 솔루션으로 공급합니다.</p>
+          <table class="spec-t">
+            <thead><tr><th>사양</th><th>D3</th><th>D6</th></tr></thead>
+            <tbody>
+              <tr><td>무게</td><td>60kg</td><td>80kg</td></tr>
+              <tr><td>가반 하중</td><td>3kg</td><td>6kg</td></tr>
+              <tr><td>축 수</td><td>4축</td><td>4축</td></tr>
+              <tr><td>작업 영역 (지름)</td><td>800mm</td><td>1,300mm</td></tr>
+              <tr><td>작업 영역 (높이)</td><td>300mm</td><td>500mm</td></tr>
+              <tr><td>회전축</td><td>±180°</td><td>±180°</td></tr>
+              <tr><td>반복 정밀도</td><td>±0.1mm</td><td>±0.1mm</td></tr>
+              <tr><td>구동부</td><td colspan="2">AC 서보 모터, 앱솔루트 엔코더</td></tr>
+            </tbody>
+          </table>
+          <h4 class="spec-h">사이클 타임 <small>경로 25 × 305 × 25mm</small></h4>
+          <table class="spec-t spec-c">
+            <thead><tr><th>하중</th><th>0kg</th><th>1kg</th><th>2kg</th><th>3kg</th><th>4kg</th><th>5kg</th><th>6kg</th></tr></thead>
+            <tbody>
+              <tr><td>D3</td><td>0.30s</td><td>0.45s</td><td>0.51s</td><td>0.55s</td><td>-</td><td>-</td><td>-</td></tr>
+              <tr><td>D6</td><td>0.30s</td><td>0.36s</td><td>0.37s</td><td>0.39s</td><td>0.41s</td><td>0.43s</td><td>0.45s</td></tr>
+            </tbody>
+          </table>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="/support/contact/">견적 문의</a>
+            <a class="btn btn-line" href="tel:{{ site.mobile }}">전화 상담</a>
+          </div>
+          <p class="spec-note">카탈로그는 요청 시 메일로 보내드립니다.</p>
+        </div>
       </div>
     </div>
 
