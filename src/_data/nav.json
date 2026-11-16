@@ -56,24 +56,20 @@
     "url": "/products/",
     "children": [
       {
-        "title": "델타로봇",
+        "title": "델타로봇 D 시리즈",
         "url": "/products/#delta"
       },
       {
-        "title": "스카라로봇",
-        "url": "/products/#scara"
+        "title": "OMRON",
+        "url": "/products/#omron"
       },
       {
-        "title": "다관절로봇",
-        "url": "/products/#articulated"
+        "title": "뉴로메카",
+        "url": "/products/#neuromeka"
       },
       {
-        "title": "협동로봇",
-        "url": "/products/#cobot"
-      },
-      {
-        "title": "비젼시스템",
-        "url": "/products/#vision"
+        "title": "레인보우로보틱스",
+        "url": "/products/#rainbow"
       }
     ]
   },

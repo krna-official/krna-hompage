@@ -1,0 +1,34 @@
+[
+  {
+    "key": "omron",
+    "name": "OMRON",
+    "logo": "/images/brands/omron.png",
+    "desc": "스카라, 델타(병렬), 다관절, 협동로봇(TM 시리즈), 모바일 로봇과 FH 비전 시스템까지 오므론의 로봇·비전 제품을 공급합니다.",
+    "items": ["스카라 로봇", "델타 로봇", "다관절 로봇", "협동로봇 TM", "FH 비전"],
+    "links": [
+      { "label": "오므론 로봇 제품 보기", "url": "https://www.ia.omron.co.kr/products/products?category=21" },
+      { "label": "오므론 비전 센서 보기", "url": "https://www.ia.omron.co.kr/products/products?category=01&subCategory=0110" }
+    ]
+  },
+  {
+    "key": "neuromeka",
+    "name": "뉴로메카",
+    "logo": "/images/brands/neuromeka.png",
+    "dark": true,
+    "desc": "국내 대표 협동로봇 기업 뉴로메카의 Indy, NURI 협동로봇과 ICoN 산업용 로봇을 공급하는 공식 대리점입니다.",
+    "items": ["협동로봇 Indy", "협동로봇 NURI", "산업용 로봇 ICoN", "델타로봇 D"],
+    "links": [
+      { "label": "뉴로메카 로봇 제품 보기", "url": "https://www.neuromeka.com/robot" }
+    ]
+  },
+  {
+    "key": "rainbow",
+    "name": "레인보우로보틱스",
+    "logo": "/images/brands/rainbow.svg",
+    "desc": "휴머노이드 기술 기반의 RB 시리즈 협동로봇과 양팔로봇 등 레인보우로보틱스 로봇을 공급합니다.",
+    "items": ["협동로봇 RB 시리즈", "모바일 양팔로봇 RB-Y1"],
+    "links": [
+      { "label": "레인보우로보틱스 제품 보기", "url": "https://rainbow-robotics.com/%EC%A0%9C%ED%92%88%EC%86%94%EB%A3%A8%EC%85%98/%EC%A0%84%EC%B2%B4-%EC%A0%9C%ED%92%88-%EB%9D%BC%EC%9D%B8%EC%97%85/" }
+    ]
+  }
+]

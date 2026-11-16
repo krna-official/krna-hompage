@@ -96,16 +96,21 @@ bodyClass: home
         <p class="eyebrow">Products</p>
         <h2>제품소개</h2>
       </div>
-      <a class="link-more" href="/products/">전체 제품 보기</a>
+      <a class="link-more" href="/products/">제품 더 보기</a>
     </div>
-    <div class="cat-grid">
-      {% for cat in categories.products %}
-        {% set first = collections.products | where("category", cat.key) | first %}
-        <a class="cat" href="/products/#{{ cat.key }}">
-          <div class="cat-img"><img src="{{ first.data.image }}" alt="{{ cat.name }}" loading="lazy"></div>
-          <h3>{{ cat.name }}</h3>
-          <p>{{ cat.desc }}</p>
-        </a>
+    <div class="cat-grid cat-4">
+      {% set d = collections.products | where("category", "delta") | first %}
+      <a class="cat" href="/products/#delta">
+        <div class="cat-img"><img src="{{ d.data.image }}" alt="뉴로메카 델타로봇 D 시리즈" loading="lazy"></div>
+        <h3>델타로봇 D 시리즈</h3>
+        <p>고속 피킹·인케이싱용 뉴로메카 델타로봇</p>
+      </a>
+      {% for b in partners %}
+      <a class="cat" href="/products/#{{ b.key }}">
+        <div class="cat-img cat-logo{% if b.dark %} dark{% endif %}"><img src="{{ b.logo }}" alt="{{ b.name }}" loading="lazy"></div>
+        <h3>{{ b.name }}</h3>
+        <p>{{ b.items | join(" · ") }}</p>
+      </a>
       {% endfor %}
     </div>
   </div>

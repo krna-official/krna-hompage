@@ -6,21 +6,34 @@ permalink: /products/
 ---
 <section class="sec">
   <div class="wrap">
-    {% for cat in categories.products %}
-    <div class="prod-sec" id="{{ cat.key }}">
-      <div class="sec-hd"><h2>{{ cat.name }}</h2><p>{{ cat.desc }}</p></div>
+    <div class="prod-sec" id="delta">
+      <div class="sec-hd"><p class="eyebrow">Delta Robot</p><h2>델타로봇</h2><p>고속 피킹·인케이싱에 최적화된 병렬 로봇입니다. KRNA 포장 자동화 라인의 핵심 로봇입니다.</p></div>
       <div class="prod-grid">
-        {% for p in collections.products | where("category", cat.key) %}
+        {% for p in collections.products | where("category", "delta") %}
         <a class="prod" href="{{ p.url }}">
           <div class="prod-img"><img src="{{ p.data.image }}" alt="{{ p.data.brand }} {{ p.data.title }}" loading="lazy"></div>
           <span class="brand">{{ p.data.brand }}</span>
-          <h3>{{ p.data.title }}</h3>
+          <h3>{{ p.data.title }} 시리즈</h3>
           <p>{{ p.data.model }}</p>
         </a>
         {% endfor %}
       </div>
     </div>
-    {% endfor %}
+
+    <div class="prod-sec" id="partners">
+      <div class="sec-hd"><p class="eyebrow">Partners</p><h2>파트너 로봇·비전 제품</h2><p>그 밖의 로봇과 비전 제품은 제조사 공식 홈페이지에서 최신 정보를 확인하실 수 있습니다. 모델 선정과 견적은 KRNA로 문의해 주세요.</p></div>
+      <div class="pt-grid">
+        {% for b in partners %}
+        <div class="pt" id="{{ b.key }}">
+          <div class="pt-logo{% if b.dark %} dark{% endif %}"><img src="{{ b.logo }}" alt="{{ b.name }}"></div>
+          <h3>{{ b.name }}</h3>
+          <p>{{ b.desc }}</p>
+          <ul>{% for it in b.items %}<li>{{ it }}</li>{% endfor %}</ul>
+          <div class="pt-links">{% for l in b.links %}<a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }} <span aria-hidden="true">↗</span></a>{% endfor %}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
   </div>
 </section>
 {% include "cta.njk" %}
