@@ -347,3 +347,24 @@ h1,h2,h3{line-height:1.3;margin:0;letter-spacing:-.02em}
 .ai-points li{padding:10px 18px;border-radius:999px;background:#e6f5fc;color:var(--blue-d);font-weight:700;font-size:15px}
 @media (max-width:900px){.ai-grid{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}.flow li:after{display:none}}
 @media (max-width:600px){.flow{grid-template-columns:1fr}}
+/* scope & tech */
+.scope{display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:16px;align-items:stretch}
+.scope>div{padding:28px 26px;border-radius:var(--r);background:#fff;border:1px solid var(--line)}
+.scope-core{background:var(--navy)!important;color:#fff;border-color:var(--navy)!important}
+.scope-tag{display:inline-block;font-size:12.5px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--bg-2);color:var(--ink-2);margin-bottom:12px}
+.scope-core .scope-tag{background:var(--blue);color:#fff}
+.scope h3{font-size:20px;margin-bottom:10px}
+.scope ul,.tech ul{margin:0;padding-left:18px}
+.scope li{margin:5px 0;color:var(--ink-2)}.scope-core li{color:#d3deea}
+.scope-meta{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.scope-meta>div{padding:22px 26px;border-radius:var(--r);background:#fff;border:1px solid var(--line)}
+.scope-meta h3{font-size:15px;color:var(--blue-d);margin-bottom:6px}
+.scope-meta p{margin:0;color:var(--ink-2);line-height:1.8}.scope-meta b{color:var(--ink);margin-right:6px}
+.tech-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.tech{padding:26px 22px;border-radius:var(--r);background:var(--bg-2)}
+.tech h3{font-size:18px;margin-bottom:12px;padding-bottom:12px;border-bottom:2px solid var(--blue)}
+.tech li{margin:6px 0;color:var(--ink-2);font-size:14.5px}
+.tech-ai{background:#e6f5fc}.tech-ai a{display:inline-block;margin-top:12px;font-weight:700;color:var(--blue-d);font-size:14.5px}
+@media (max-width:1080px){.tech-grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:900px){.scope,.scope-meta{grid-template-columns:1fr}.tech-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.tech-grid{grid-template-columns:1fr}}
