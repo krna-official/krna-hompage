@@ -2,16 +2,34 @@
 title: 조직도
 permalink: /company/organization/
 ---
+{% set ic = {
+  admin: '<path d="M4 20V8l8-5 8 5v12M9 20v-6h6v6M4 20h16"/>',
+  sales: '<path d="M3 17l6-6 4 4 8-8M15 7h6v6"/>',
+  mech: '<path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-2.8 1.2V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-2.9-1.2l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1A1.7 1.7 0 0 0 3.2 14H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.2-2.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1A1.7 1.7 0 0 0 10 3.2V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 2.9 1.2l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0 1.1 2.9H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/>',
+  ctrl: '<path d="M7 7h10v10H7zM10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/>',
+  lab: '<path d="M9 2h6M10 2v7L4.5 19A2 2 0 0 0 6.3 22h11.4a2 2 0 0 0 1.8-3L14 9V2M7 15h10"/>',
+  ceo: '<path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>'
+} %}
+{% macro icon(d) %}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{{ d | safe }}</svg>{% endmacro %}
+{% set depts = [
+  { k: "admin", t: "관리부", en: "Management", items: ["재무·회계 관리", "총무·인사 관리", "구매 관리"] },
+  { k: "sales", t: "영업부", en: "Sales", items: ["외주업체 관리", "수주 영업", "시스템 기술 영업"] },
+  { k: "mech", t: "기구부", en: "Mechanical", items: ["기구 설계", "기구 조립", "설치 및 시운전", "영업 지원"] },
+  { k: "ctrl", t: "제어부", en: "Control", items: ["전장 설계·제작", "PLC 프로그램", "로봇 및 비전 프로그램", "설치 및 시운전", "영업 지원"] }
+] %}
 <section class="sec">
-  <div class="wrap org">
-    <div class="org-ceo">대표이사</div>
-    <div class="org-line"></div>
-    <div class="org-lab">기업부설연구소</div>
-    <div class="org-line"></div>
-    <div class="org-depts">
-      <div class="org-dept"><h3>기술부</h3><ul><li>기구설계</li><li>제어설계</li></ul></div>
-      <div class="org-dept"><h3>영업부</h3></div>
-      <div class="org-dept"><h3>관리부</h3></div>
+  <div class="wrap og">
+    <div class="og-top">
+      <div class="og-ceo">{{ icon(ic.ceo) }}<b>대표이사</b><span>CEO</span></div>
+      <div class="og-lab-wrap"><div class="og-lab">{{ icon(ic.lab) }}<div><b>기업부설연구소</b><span>R&amp;D Center</span></div></div></div>
+    </div>
+    <div class="og-depts">
+      {% for d in depts %}
+      <div class="og-dept og-{{ d.k }}">
+        <div class="og-hd">{{ icon(ic[d.k]) }}<div><h3>{{ d.t }}</h3><span>{{ d.en }}</span></div></div>
+        <ul>{% for it in d.items %}<li>{{ it }}</li>{% endfor %}</ul>
+      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
