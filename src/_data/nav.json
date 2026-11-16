@@ -78,17 +78,13 @@
     ]
   },
   {
-    "title": "고객센터",
+    "title": "공지사항",
     "url": "/support/",
-    "children": [
-      {
-        "title": "공지사항",
-        "url": "/support/"
-      },
-      {
-        "title": "문의하기",
-        "url": "/support/contact/"
-      }
-    ]
+    "children": []
+  },
+  {
+    "title": "문의하기",
+    "url": "/support/contact/",
+    "children": []
   }
 ]

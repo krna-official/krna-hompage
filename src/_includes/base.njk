@@ -22,13 +22,12 @@
     <nav class="gnb" aria-label="주 메뉴">
       <ul>
       {% for m in nav %}
-        <li class="{% if page.url.startsWith(m.url) and page.url != "/support/contact/" %}on{% endif %}"><a href="{{ m.url }}">{{ m.title }}</a>
-          <ul class="sub">{% for c in m.children %}<li><a href="{{ c.url }}">{{ c.title }}</a></li>{% endfor %}</ul>
+        <li class="{% if page.url.startsWith(m.url) and not (m.url == "/support/" and page.url == "/support/contact/") %}on{% endif %}"><a href="{{ m.url }}">{{ m.title }}</a>
+          {% if m.children.length %}<ul class="sub">{% for c in m.children %}<li><a href="{{ c.url }}">{{ c.title }}</a></li>{% endfor %}</ul>{% endif %}
         </li>
       {% endfor %}
       </ul>
     </nav>
-    <a class="btn btn-sm hd-cta{% if page.url == "/support/contact/" %} on{% endif %}" href="/support/contact/">견적·상담 문의</a>
     <button class="menu-btn" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
