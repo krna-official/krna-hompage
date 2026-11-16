@@ -12,7 +12,7 @@ if (filters) {
   const apply = (f) => {
     filters.querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.filter === f));
     cards.forEach(c => {
-      const show = f === 'all' || c.dataset.industry === f || c.dataset.type === f;
+      const show = f === 'all' || c.dataset.industry === f || c.dataset.type === f || (f === 'gov' && c.dataset.gov === '1');
       c.classList.toggle('hide', !show);
     });
   };

@@ -14,7 +14,7 @@ layout: base.njk
         {% for g in gallery %}<img src="{{ g }}" alt="{{ title }} 상세" loading="lazy">{% endfor %}
       </div>
       <div class="detail-info">
-        <span class="tag">{{ industry }}</span>
+        <span class="tag">{{ industry }}</span>{% if gov %} <span class="tag tag-gov">{{ gov }}</span>{% endif %}
         <h2>{{ title }}</h2>
         <dl class="spec">
           {% if client %}<dt>고객사</dt><dd>{{ client }}</dd>{% endif %}

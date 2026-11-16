@@ -11,6 +11,7 @@ permalink: /cases/
       {% for ind in categories.industries %}{% set n = collections.cases | where("industry", ind) %}{% if n.length %}
       <button data-filter="{{ ind }}">{{ ind }} <span>{{ n.length }}</span></button>{% endif %}{% endfor %}
       {% set sf = collections.cases | where("type", "smart-factory") %}<button data-filter="smart-factory">스마트 공장 <span>{{ sf.length }}</span></button>
+      {% set gv = 0 %}{% for c in collections.cases %}{% if c.data.gov %}{% set gv = gv + 1 %}{% endif %}{% endfor %}{% if gv %}<button data-filter="gov">정부지원 실증 <span>{{ gv }}</span></button>{% endif %}
     </div>
     <div class="case-grid" id="caseGrid">
       {% for c in collections.cases %}{% include "case-card.njk" %}{% endfor %}
