@@ -252,7 +252,7 @@ h1,h2,h3{line-height:1.3;margin:0;letter-spacing:-.02em}
 /* footer */
 .ft{background:#08121e;color:#9aa8b8;font-size:14.5px}
 .ft-top{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-top:48px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.08)}
-.ft-logo{background:#fff;border-radius:8px;padding:6px 8px;height:auto;width:130px}
+.ft-logo{height:auto;width:155px}
 .ft-slogan{margin:12px 0 0;color:#c9d4e0}
 .ft-contact{display:flex;gap:28px;flex-wrap:wrap}
 .ft-contact p{margin:0}.ft-contact strong{color:#fff}
@@ -364,7 +364,7 @@ h1,h2,h3{line-height:1.3;margin:0;letter-spacing:-.02em}
 .sd-link span{position:absolute;left:50%;top:-30px;transform:translateX(-50%);font-size:12px;font-weight:700;color:var(--blue-d);white-space:nowrap}
 .sd-core{position:relative;background:radial-gradient(500px 300px at 50% 0%,#17406a,var(--navy));color:#fff;border-radius:28px;padding:30px 28px;box-shadow:0 20px 50px rgba(12,31,51,.25)}
 .sd-core-hd{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:22px}
-.sd-core-hd img{background:#fff;border-radius:8px;padding:5px 8px;width:110px;height:auto}
+.sd-core-hd img{width:139px;height:auto}
 .sd-core-hd p{margin:0;font-size:20px;font-weight:800}
 .sd-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px;counter-reset:st}
 .sd-steps li{counter-increment:st;position:relative;display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto;column-gap:12px;align-items:center;padding:14px;border-radius:14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12)}
