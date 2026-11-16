@@ -1,7 +1,7 @@
 <a class="case" href="{{ c.url }}" data-industry="{{ c.data.industry }}" data-type="{{ c.data.type }}"{% if c.data.gov %} data-gov="1"{% endif %}>
   <div class="case-img"><img src="{{ c.data.image }}" alt="{{ c.data.title }}" loading="lazy">{% if c.data.youtube %}<span class="play" aria-label="영상 있음"></span>{% endif %}</div>
   <div class="case-body">
-    <span class="tag">{{ c.data.industry }}</span>{% if c.data.gov %} <span class="tag tag-gov">정부지원 실증</span>{% endif %}
+    <span class="tag">{{ c.data.industry }}</span>{% if c.data.gov %} <span class="tag tag-gov">로봇 실증사업</span>{% endif %}
     <h3>{{ c.data.title }}</h3>
     <p>{{ c.data.client }}{% if c.data.completed %} · {{ c.data.completed }}{% endif %}</p>
   </div>
