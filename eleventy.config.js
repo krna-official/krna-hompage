@@ -11,5 +11,6 @@ export default function (cfg) {
   cfg.addFilter("where", (arr, k, v) => (arr || []).filter((i) => i.data[k] === v));
   cfg.addFilter("limit", (arr, n) => (arr || []).slice(0, n));
   cfg.addFilter("year", () => new Date().getFullYear());
+  cfg.addGlobalData("build", () => Date.now().toString(36));
   return { pathPrefix: process.env.PATH_PREFIX || "/", dir: { input: "src", output: "_site", includes: "_includes", data: "_data" }, markdownTemplateEngine: "njk", htmlTemplateEngine: "njk" };
 }

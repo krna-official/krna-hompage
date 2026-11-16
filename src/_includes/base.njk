@@ -12,13 +12,13 @@
 <link rel="icon" href="/images/favicon.png">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/style.css?v={{ build }}">
 </head>
 <body class="{{ bodyClass }}">
 <a class="skip" href="#main">본문 바로가기</a>
 <header class="hd" id="hd">
   <div class="wrap hd-in">
-    <a class="logo" href="/"><img src="/images/logo.png" alt="KRNA" width="133" height="46"><img class="logo-ko" src="/images/logo-ko.png" alt="(주)케이알앤에이" width="188" height="20"></a>
+    <a class="logo" href="/"><img src="/images/logo.png" alt="KRNA" width="133" height="46"><span class="logo-ko">(주)케이알앤에이</span></a>
     <nav class="gnb" aria-label="주 메뉴">
       <ul>
       {% for m in nav %}
@@ -68,6 +68,6 @@
     <p class="copy">© {{ "" | year }} KRNA Co., Ltd. All rights reserved. · <a href="/privacy/">개인정보처리방침</a></p>
   </div>
 </footer>
-<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/main.js?v={{ build }}" defer></script>
 </body>
 </html>
