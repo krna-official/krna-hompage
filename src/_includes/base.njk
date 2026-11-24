@@ -3,13 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{% if title and page.url != "/" %}{{ title }} | {% endif %}{{ site.name }} KRNA</title>
+<title>{% if title and page.url != "/" %}{{ title }} | {{ site.name }} KRNA{% else %}{{ site.name }} KRNA | {{ title or "로봇 자동화·스마트공장 구축 전문기업" }}{% endif %}</title>
 <meta name="description" content="{{ description or site.description }}">
-<meta property="og:title" content="{{ title or site.name }}">
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+{% if site.naverVerification %}<meta name="naver-site-verification" content="{{ site.naverVerification }}">
+{% endif %}<meta property="og:site_name" content="{{ site.name }} KRNA">
+<meta property="og:title" content="{% if page.url == "/" %}{{ site.name }} KRNA{% else %}{{ title or site.name }}{% endif %}">
 <meta property="og:description" content="{{ description or site.description }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
 <meta property="og:image" content="{{ site.url }}{{ image or '/images/og.jpg' }}">
 <meta property="og:type" content="website">
-<link rel="icon" href="/images/favicon.png">
+{% if page.url == "/" %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"{{ site.name }}","alternateName":["케이알앤에이","KRNA","{{ site.nameEn }}"],"url":"{{ site.url }}/","logo":"{{ site.url }}/images/logo.png","telephone":"{{ site.tel }}","email":"{{ site.email }}","address":{"@type":"PostalAddress","streetAddress":"{{ site.address }}","postalCode":"{{ site.zip }}","addressCountry":"KR"}}</script>
+{% endif %}<link rel="icon" href="/images/favicon.png">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="/assets/css/style.css?v={{ build }}">

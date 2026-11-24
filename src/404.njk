@@ -2,5 +2,16 @@
 layout: base.njk
 title: 페이지를 찾을 수 없습니다
 permalink: /404.html
+eleventyExcludeFromCollections: true
 ---
 <section class="sec"><div class="wrap narrow center"><h1>페이지를 찾을 수 없습니다</h1><p>주소가 바뀌었거나 삭제된 페이지입니다.</p><a class="btn btn-primary" href="/">홈으로</a></div></section>
+<script>
+/* 예전 가비아 홈페이지 주소(검색 결과에 남아 있는 링크)로 들어온 방문자를 새 페이지로 보냅니다 */
+(function () {
+  var p = location.pathname, q = location.search, to = null;
+  if (/^\/goods\//.test(p)) to = /cate=001/.test(q) ? "/business/" : (/cate=002/.test(q) ? "/products/" : "/");
+  else if (/^\/board\//.test(p)) to = /code=notice/.test(q) ? "/support/notice/" : "/support/contact/";
+  else if (/^\/(member|shop|main|index\.php|html)\b/.test(p)) to = "/";
+  if (to) location.replace(to);
+})();
+</script>
